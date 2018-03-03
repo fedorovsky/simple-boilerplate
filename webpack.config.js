@@ -7,8 +7,7 @@ module.exports = {
   devtool: 'source-map',
   entry: ['./src/index.js'],
   output: {
-    publicPath: '/',
-    path: path.join(__dirname, 'public'),
+    path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js',
   },
   module: {
@@ -26,24 +25,16 @@ module.exports = {
             loader: require.resolve('css-loader'),
             options: {
               importLoaders: 1,
-              modules: true,
+              modules: false,
               localIdentName: '[path]-[local]-[hash:base64:8]',
             },
           },
           {
             loader: require.resolve('postcss-loader'),
             options: {
-              ident: 'postcss',
-              plugins: () => [
-                require('postcss-smart-import'),
-                require('postcss-cssnext')({
-                  features: {
-                    autoprefixer: true,
-                  },
-                }),
-                require('postcss-nested'),
-                require('postcss-flexbugs-fixes'),
-              ],
+              config: {
+                path: 'postcss.config.js',
+              },
             },
           },
         ],
@@ -72,11 +63,13 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new OpenBrowserPlugin({ url: 'http://localhost:8080' }),
     new HtmlWebpackPlugin({
-      template: './src/index.html',
+      template: path.resolve(__dirname, './src/index.html'),
+      inject: true,
       files: {
         css: ['style.css'],
         js: ['bundle.js'],
       },
+      cache: false,
     }),
   ],
 };
