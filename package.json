@@ -1,9 +1,9 @@
 {
   "name": "simple-boilerplate",
   "version": "0.0.1",
-  "description": "Custom Select",
+  "description": "Simple Boilerplate",
   "main": "dist/index.js",
-  "repository": "https://github.com/fedorovsky/react-select-friendly",
+  "repository": "https://github.com/fedorovsky/simple-boilerplate",
   "author": "Anton Fedorovskyi <anton.fedorovsky@gmail.com>",
   "license": "MIT",
   "scripts": {

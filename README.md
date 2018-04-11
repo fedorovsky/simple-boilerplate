@@ -1,1 +1,3 @@
 # simple-boilerplate
+
+```yarn install```
