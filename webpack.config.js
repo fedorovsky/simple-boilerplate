@@ -6,7 +6,7 @@ const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 
 module.exports = {
   devtool: 'source-map',
-  entry: ['./src/index.js'],
+  entry: path.resolve(__dirname, 'src/js/index.js'),
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js',
@@ -42,7 +42,6 @@ module.exports = {
       },
     ],
   },
-
   devServer: {
     contentBase: './public',
     watchContentBase: true,
@@ -56,8 +55,11 @@ module.exports = {
       modules: false,
     },
   },
-
   resolve: {
+    modules: [
+      path.resolve(__dirname, 'src'),
+      path.resolve(__dirname, 'node_modules'),
+    ],
     alias: {
       'react-select-friendly': path.join(__dirname, '.', 'src', 'index'),
     },
