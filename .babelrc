@@ -1,14 +1,7 @@
 {
   "presets": [
-    "es2015",
+    "env",
     "react",
-    "stage-0",
-    [
-      "babili",
-      {
-        "evaluate": false,
-        "mangle": false
-      }
-    ]
+    "stage-0"
   ]
 }

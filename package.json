@@ -8,15 +8,15 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack",
-    "dev": "webpack-dev-server"
+    "dev": "webpack-dev-server",
+    "fix": "eslint --fix ./src/js/*"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.2",
     "babel-loader": "^7.1.2",
-    "babel-preset-babili": "^0.1.4",
-    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-react-hmre": "^1.1.1",
     "babel-preset-stage-0": "^6.24.1",
