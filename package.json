@@ -7,8 +7,8 @@
   "author": "Anton Fedorovskyi <anton.fedorovsky@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "webpack",
-    "dev": "webpack-dev-server",
+    "dev": "webpack-dev-server --config webpack.dev.js",
+    "prod": "webpack --config webpack.prod.js",
     "fix": "eslint --fix ./src/js/*"
   },
   "devDependencies": {

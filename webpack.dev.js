@@ -41,7 +41,7 @@ module.exports = {
               },
             },
           ],
-        }),
+        })
       },
     ],
   },
@@ -72,7 +72,6 @@ module.exports = {
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.NamedModulesPlugin(),
     new ExtractTextPlugin('css/style.css'),
-    // new webpack.HotModuleReplacementPlugin(),
     new OpenBrowserPlugin({ url: 'http://localhost:9000' }),
     new HtmlWebpackPlugin({
       inject: true,
