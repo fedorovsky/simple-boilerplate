@@ -6,11 +6,14 @@
     "document": true
   },
   "rules": {
-    "no-console": ["error", { "allow": ["warn", "error", "log"] }],
-    "import/no-unresolved": ["off"],
-    "import/extensions": ["off"],
-    "react/react-in-jsx-scope": ["off"],
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    "no-console": "off",
+    "import/no-unresolved": "off",
+    "import/extensions": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "prefer-destructuring": ["error", {"object": true, "array": false}],
+    "quote-props": "off",
+    "linebreak-style": "off",
   },
   "parser": "babel-eslint",
   "parserOptions": {

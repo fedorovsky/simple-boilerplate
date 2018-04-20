@@ -5,6 +5,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+process.env.NODE_ENV = 'development';
+process.env.BABEL_ENV = 'development';
+
 module.exports = {
   devtool: 'source-map',
   entry: path.resolve(__dirname, 'src/js/index.js'),
