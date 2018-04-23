@@ -1,7 +1,6 @@
 # simple-boilerplate
 A simple set, for a quick start. Try the new features of JavaScript with Babel.
 
-Webpack simple boilerplate:
 - Babel
 - PostCSS
 - ESlint
