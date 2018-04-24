@@ -3,5 +3,12 @@
     "env",
     "react",
     "stage-0"
-  ]
+  ],
+  "env": {
+    "production": {
+      "presets": ["minify"]
+    }
+  },
+  "highlightCode": false,
+  "comments": false
 }

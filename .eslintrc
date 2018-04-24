@@ -2,20 +2,22 @@
   "extends": [
     "airbnb"
   ],
+  "parser": "babel-eslint",
   "globals": {
+    "fetch": true,
+    "window": true,
     "document": true
   },
   "rules": {
-    "no-console": "off",
-    "import/no-unresolved": "off",
-    "import/extensions": "off",
-    "react/react-in-jsx-scope": "off",
+    "no-console": 0,
+    "import/no-unresolved": 0,
+    "import/extensions": 0,
+    "react/react-in-jsx-scope": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "prefer-destructuring": ["error", {"object": true, "array": false}],
-    "quote-props": "off",
-    "linebreak-style": "off",
+    "quote-props": 0,
+    "linebreak-style": 0,
   },
-  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module",
