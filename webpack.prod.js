@@ -55,6 +55,16 @@ module.exports = {
     ],
   },
   plugins: [
+    new webpack.optimize.UglifyJsPlugin({
+      output: {
+        comments: false,
+      },
+      compress: {
+        warnings: false,
+        drop_console: false,
+        unsafe: true,
+      },
+    }),
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.NamedModulesPlugin(),
     new ExtractTextPlugin('css/style.css'),
