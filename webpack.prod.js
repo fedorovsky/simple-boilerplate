@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -55,6 +56,12 @@ module.exports = {
     ],
   },
   plugins: [
+    new CopyWebpackPlugin([
+      {
+        from: 'src/img',
+        to: 'img',
+      },
+    ]),
     new webpack.optimize.UglifyJsPlugin({
       output: {
         comments: false,

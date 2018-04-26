@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
@@ -44,7 +45,7 @@ module.exports = {
               },
             },
           ],
-        })
+        }),
       },
     ],
   },
@@ -72,6 +73,12 @@ module.exports = {
     },
   },
   plugins: [
+    new CopyWebpackPlugin([
+      {
+        from: 'src/img',
+        to: 'img',
+      },
+    ]),
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.NamedModulesPlugin(),
     new ExtractTextPlugin('css/style.css'),
