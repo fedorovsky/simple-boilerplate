@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+const ImageminPlugin = require('imagemin-webpack-plugin').default
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
@@ -62,6 +63,7 @@ module.exports = {
         to: 'img',
       },
     ]),
+    new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i }),
     new webpack.optimize.UglifyJsPlugin({
       output: {
         comments: false,
