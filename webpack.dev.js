@@ -73,12 +73,10 @@ module.exports = {
     },
   },
   plugins: [
-    new CopyWebpackPlugin([
-      {
-        from: 'src/img',
-        to: 'img',
-      },
-    ]),
+    new CopyWebpackPlugin([{
+      from: path.resolve(__dirname, 'src/img'),
+      to: path.resolve(__dirname, 'public/img')
+    }]),
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.NamedModulesPlugin(),
     new ExtractTextPlugin('css/style.css'),

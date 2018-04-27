@@ -57,17 +57,12 @@ module.exports = {
     ],
   },
   plugins: [
-    new CopyWebpackPlugin([
-      {
-        from: 'src/img',
-        to: 'img',
-      },
-    ]),
+    new CopyWebpackPlugin([{
+      from: path.resolve(__dirname, 'src/img'),
+      to: path.resolve(__dirname, 'public/img')
+    }]),
     new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i }),
     new webpack.optimize.UglifyJsPlugin({
-      output: {
-        comments: false,
-      },
       compress: {
         warnings: false,
         drop_console: false,
