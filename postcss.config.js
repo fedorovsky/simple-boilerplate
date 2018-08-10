@@ -1,12 +1,12 @@
 module.exports = () => ({
-  plugins: [
-    require('postcss-smart-import'),
-    require('postcss-cssnext')({
+  plugins: {
+    'postcss-smart-import': {},
+    'postcss-cssnext': {
       features: {
         autoprefixer: true,
       },
-    }),
-    require('postcss-nested'),
-    require('postcss-flexbugs-fixes'),
-  ],
+    },
+    'postcss-nested': {},
+    'postcss-flexbugs-fixes': {},
+  },
 });
