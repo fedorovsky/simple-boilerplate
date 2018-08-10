@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
-const ImageminPlugin = require('imagemin-webpack-plugin').default
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
@@ -33,7 +33,6 @@ module.exports = {
                 minimize: true,
                 importLoaders: 1,
                 modules: false,
-                localIdentName: '[path]-[local]-[hash:base64:8]',
               },
             },
             {
@@ -45,7 +44,7 @@ module.exports = {
               },
             },
           ],
-        })
+        }),
       },
     ],
   },
@@ -57,10 +56,12 @@ module.exports = {
     ],
   },
   plugins: [
-    new CopyWebpackPlugin([{
-      from: path.resolve(__dirname, 'src/img'),
-      to: path.resolve(__dirname, 'public/img')
-    }]),
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, 'src/img'),
+        to: path.resolve(__dirname, 'public/img'),
+      },
+    ]),
     new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {

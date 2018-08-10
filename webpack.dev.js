@@ -33,7 +33,6 @@ module.exports = {
               options: {
                 importLoaders: 1,
                 modules: false,
-                localIdentName: '[path]-[local]-[hash:base64:8]',
               },
             },
             {
@@ -68,15 +67,14 @@ module.exports = {
       path.resolve(__dirname, 'src/js'),
       path.resolve(__dirname, 'node_modules'),
     ],
-    alias: {
-      'react-select-friendly': path.join(__dirname, '.', 'src', 'index'),
-    },
   },
   plugins: [
-    new CopyWebpackPlugin([{
-      from: path.resolve(__dirname, 'src/img'),
-      to: path.resolve(__dirname, 'public/img')
-    }]),
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, 'src/img'),
+        to: path.resolve(__dirname, 'public/img'),
+      },
+    ]),
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.NamedModulesPlugin(),
     new ExtractTextPlugin('css/style.css'),
