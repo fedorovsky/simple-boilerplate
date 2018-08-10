@@ -2,17 +2,19 @@
   "name": "simple-boilerplate",
   "version": "0.0.1",
   "description": "Simple Boilerplate",
-  "main": "dist/index.js",
+  "keywords": [],
   "repository": "https://github.com/fedorovsky/simple-boilerplate",
-  "author": "Anton Fedorovskyi <anton.fedorovsky@gmail.com>",
   "license": "MIT",
+  "author": "Anton Fedorovskyi <anton.fedorovsky@gmail.com>",
+  "main": "dist/index.js",
   "scripts": {
-    "dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
+    "dev": "webpack-dev-server --config webpack.dev.js",
     "eslint:--fix": "eslint --fix ./src/js/*",
-    "stylelint:--fix": "stylelint ./**/*.css !./public/**/*.css --fix",
-    "fix": "yarn eslint:--fix && yarn stylelint:--fix"
+    "fix": "yarn eslint:--fix && yarn stylelint:--fix",
+    "stylelint:--fix": "stylelint ./**/*.css !./public/**/*.css --fix"
   },
+  "dependencies": {},
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "6.26.0",
@@ -48,7 +50,5 @@
     "stylelint-order": "^0.8.1",
     "webpack": "^3.11.0",
     "webpack-dev-server": "^2.11.1"
-  },
-  "keywords": [],
-  "dependencies": {}
+  }
 }
