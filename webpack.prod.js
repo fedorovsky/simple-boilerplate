@@ -1,7 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -66,6 +65,16 @@ module.exports = {
           },
         }],
       },
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'img/',
+          },
+        },
+      },
     ],
   },
   resolve: {
@@ -76,12 +85,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(__dirname, 'src/img'),
-        to: path.resolve(__dirname, 'public/img'),
-      },
-    ]),
     new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {

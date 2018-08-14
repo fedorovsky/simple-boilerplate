@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 const path = require('path');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
@@ -66,6 +65,16 @@ module.exports = {
           },
         }],
       },
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'img/',
+          },
+        },
+      },
     ],
   },
   devServer: {
@@ -89,12 +98,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(__dirname, 'src/img'),
-        to: path.resolve(__dirname, 'public/img'),
-      },
-    ]),
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.NamedModulesPlugin(),
     new ExtractTextPlugin('css/style.css'),
