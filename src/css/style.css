@@ -1,4 +1,9 @@
 @import "normalize.css";
+@import "fonts.css";
+
+html {
+  font-family: "MuseoSans", sans-serif;
+}
 
 body {
   .text {

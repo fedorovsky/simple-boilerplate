@@ -46,6 +46,26 @@ module.exports = {
           ],
         }),
       },
+      {
+        test: /\.(html)$/,
+        include: path.join(__dirname, 'src/views'),
+        use: {
+          loader: 'html-loader',
+          options: {
+            interpolate: true,
+          },
+        },
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'fonts/',
+          },
+        }],
+      },
     ],
   },
   resolve: {
