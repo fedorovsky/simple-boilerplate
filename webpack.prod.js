@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
@@ -57,13 +58,15 @@ module.exports = {
       },
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: '[name].[ext]',
-            outputPath: 'fonts/',
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/',
+            },
           },
-        }],
+        ],
       },
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
@@ -96,12 +99,22 @@ module.exports = {
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.NamedModulesPlugin(),
     new ExtractTextPlugin('css/style.css'),
+    new HtmlWebpackHarddiskPlugin(),
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, 'src/fonts'),
+        to: path.resolve(__dirname, 'public/fonts'),
+      },
+      {
+        from: path.resolve(__dirname, 'src/img'),
+        to: path.resolve(__dirname, 'public/img'),
+      },
+    ]),
     new HtmlWebpackPlugin({
       inject: true,
       template: path.resolve(__dirname, 'src/index.html'),
       filename: path.resolve(__dirname, 'public/index.html'),
       alwaysWriteToDisk: true,
     }),
-    new HtmlWebpackHarddiskPlugin(),
   ],
 };

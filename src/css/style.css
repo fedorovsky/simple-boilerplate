@@ -1,15 +1,11 @@
-@import "normalize.css";
-@import "fonts.css";
+@import 'normalize.css';
+@import 'fonts.css';
 
 html {
-  font-family: "MuseoSans", sans-serif;
+  font-family: 'MuseoSans', sans-serif;
 }
 
 body {
-  .text {
-    color: red;
-  }
-
   @media (--xs-only) {
     border: 5px solid yellow;
   }
@@ -25,6 +21,11 @@ body {
   @media (--lg-only) {
     border: 5px solid violet;
   }
+}
+
+.background {
+  height: 200px;
+  background-image: url('~/img/photo.jpg');
 }
 
 img {

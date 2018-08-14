@@ -1,71 +1,71 @@
 @font-face {
-  font-family: "MuseoSans";
-  src: url("../fonts/museosans-0020-007F-300.woff") format("woff");
-  font-weight: normal;
+  font-family: 'MuseoSans';
   font-style: normal;
+  font-weight: normal;
+  src: url('~/fonts/museosans-0020-007F-300.woff') format('woff');
   unicode-range: U+0020-007F;
 }
 
 @font-face {
-  font-family: "MuseoSans";
-  src: url("../fonts/museosans-0020-007F-500.woff") format("woff");
+  font-family: 'MuseoSans';
+  font-style: normal;
   font-weight: 500;
-  font-style: normal;
+  src: url('~/fonts/museosans-0020-007F-500.woff') format('woff');
   unicode-range: U+0020-007F;
 }
 
 @font-face {
-  font-family: "MuseoSans";
-  src: url("../fonts/museosans-0020-007F-700.woff") format("woff");
+  font-family: 'MuseoSans';
+  font-style: normal;
   font-weight: 700;
-  font-style: normal;
+  src: url('~/fonts/museosans-0020-007F-700.woff') format('woff');
   unicode-range: U+0020-007F;
 }
 
 @font-face {
-  font-family: "MuseoSans";
-  src: url("../fonts/museosans-0401-0451-300.woff") format("woff");
-  font-weight: normal;
+  font-family: 'MuseoSans';
   font-style: normal;
+  font-weight: normal;
+  src: url('~/fonts/museosans-0401-0451-300.woff') format('woff');
   unicode-range: U+0401-0451;
 }
 
 @font-face {
-  font-family: "MuseoSans";
-  src: url("../fonts/museosans-0401-0451-500.woff") format("woff");
+  font-family: 'MuseoSans';
+  font-style: normal;
   font-weight: 500;
-  font-style: normal;
+  src: url('~/fonts/museosans-0401-0451-500.woff') format('woff');
   unicode-range: U+0401-0451;
 }
 
 @font-face {
-  font-family: "MuseoSans";
-  src: url("../fonts/museosans-0401-0451-700.woff") format("woff");
+  font-family: 'MuseoSans';
+  font-style: normal;
   font-weight: 700;
-  font-style: normal;
+  src: url('~/fonts/museosans-0401-0451-700.woff') format('woff');
   unicode-range: U+0401-0451;
 }
 
 @font-face {
-  font-family: "MuseoSans";
-  src: url("../fonts/museosans-00A1-017F_0307-300.woff") format("woff");
-  font-weight: normal;
+  font-family: 'MuseoSans';
   font-style: normal;
+  font-weight: normal;
+  src: url('~/fonts/museosans-00A1-017F_0307-300.woff') format('woff');
   unicode-range: U+00A1-017F, U+0307;
 }
 
 @font-face {
-  font-family: "MuseoSans";
-  src: url("../fonts/museosans-00A1-017F_0307-500.woff") format("woff");
-  font-weight: 500;
+  font-family: 'MuseoSans';
   font-style: normal;
+  font-weight: 500;
+  src: url('~/fonts/museosans-00A1-017F_0307-500.woff') format('woff');
   unicode-range: U+00A1-017F, U+0307;
 }
 
 @font-face {
-  font-family: "MuseoSans";
-  src: url("../fonts/museosans-00A1-017F_0307-700.woff") format("woff");
-  font-weight: 700;
+  font-family: 'MuseoSans';
   font-style: normal;
+  font-weight: 700;
+  src: url('~/fonts/museosans-00A1-017F_0307-700.woff') format('woff');
   unicode-range: U+00A1-017F, U+0307;
 }
