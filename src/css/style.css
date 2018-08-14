@@ -1,8 +1,21 @@
 body {
-  display: flex;
-  background-color: rgba(238, 130, 238, 0.22);
-
   .text {
-    color: blue;
+    color: red;
+  }
+
+  @media (--xs-only) {
+    border: 5px solid yellow;
+  }
+
+  @media (--sm-only) {
+    border: 5px solid aqua;
+  }
+
+  @media (--md-only) {
+    border: 5px solid blue;
+  }
+
+  @media (--lg-only) {
+    border: 5px solid violet;
   }
 }
