@@ -1,3 +1,5 @@
+@import "normalize.css";
+
 body {
   .text {
     color: red;
@@ -18,4 +20,10 @@ body {
   @media (--lg-only) {
     border: 5px solid violet;
   }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
