@@ -31,6 +31,7 @@ module.exports = {
             {
               loader: require.resolve('css-loader'),
               options: {
+                sourceMap: true,
                 importLoaders: 1,
                 modules: false,
               },
@@ -38,6 +39,7 @@ module.exports = {
             {
               loader: require.resolve('postcss-loader'),
               options: {
+                sourceMap: true,
                 config: {
                   path: 'postcss.config.js',
                 },
