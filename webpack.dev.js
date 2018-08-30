@@ -3,63 +3,61 @@ const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
-process.env.NODE_ENV = 'development';
-process.env.BABEL_ENV = 'development';
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const templateParameters = require('./src/template-parameters.js');
 
 module.exports = {
   devtool: 'source-map',
-  entry: path.resolve(__dirname, 'src/js/index.js'),
+  mode: 'development',
+  entry: [
+    './src/js/index.js',
+    './src/css/style.css',
+  ],
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'js/bundle.js',
   },
+  optimization: {
+    noEmitOnErrors: true,
+    namedModules: true,
+  },
   module: {
-    loaders: [
+    rules: [
       {
-        test: /\.js/,
-        loaders: ['babel-loader', 'eslint-loader'],
+        test: /\.js$/,
         exclude: /node_modules/,
+        use: ['babel-loader', 'eslint-loader'],
       },
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: require.resolve('css-loader'),
-              options: {
-                sourceMap: true,
-                importLoaders: 1,
-                modules: false,
-              },
-            },
-            {
-              loader: require.resolve('postcss-loader'),
-              options: {
-                sourceMap: true,
-                config: {
-                  path: 'postcss.config.js',
-                },
-              },
-            },
-          ],
-        }),
-      },
-      {
-        test: /\.(html)$/,
-        include: path.join(__dirname, 'src/views'),
-        use: {
-          loader: 'html-loader',
-          options: {
-            interpolate: true,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
           },
-        },
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+              config: {
+                path: 'postcss.config.js',
+              },
+            },
+          },
+        ],
       },
       {
-        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.html$/,
+        include: path.resolve(__dirname, 'src/views'),
+        use: ['raw-loader'],
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
         use: [
           {
             loader: 'file-loader',
@@ -93,21 +91,18 @@ module.exports = {
     stats: {
       colors: true,
       modules: false,
+      chunks: false,
+      chunkGroups: false,
+      chunkModules: false,
+      env: true,
     },
   },
-  resolve: {
-    modules: [
-      path.resolve(__dirname, 'src'),
-      path.resolve(__dirname, 'src/js'),
-      path.resolve(__dirname, 'node_modules'),
-    ],
-  },
   plugins: [
-    new webpack.NoEmitOnErrorsPlugin(),
-    new webpack.NamedModulesPlugin(),
-    new ExtractTextPlugin('css/style.css'),
+    new webpack.LoaderOptionsPlugin({ options: {} }),
+    new MiniCssExtractPlugin({
+      filename: 'css/style.css',
+    }),
     new OpenBrowserPlugin({ url: 'http://localhost:9000' }),
-    new HtmlWebpackHarddiskPlugin(),
     new CopyWebpackPlugin([
       {
         from: path.resolve(__dirname, 'src/fonts'),
@@ -122,7 +117,18 @@ module.exports = {
       inject: true,
       template: path.resolve(__dirname, 'src/index.html'),
       filename: path.resolve(__dirname, 'public/index.html'),
-      alwaysWriteToDisk: true,
+    }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      templateParameters,
+      template: path.resolve(__dirname, 'src/404.html'),
+      filename: path.resolve(__dirname, 'public/404.html'),
+    }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      templateParameters,
+      template: path.resolve(__dirname, 'src/500.html'),
+      filename: path.resolve(__dirname, 'public/500.html'),
     }),
   ],
 };

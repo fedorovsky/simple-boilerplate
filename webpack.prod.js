@@ -1,63 +1,79 @@
-const webpack = require('webpack');
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
-process.env.NODE_ENV = 'production';
-process.env.BABEL_ENV = 'production';
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const templateParameters = require('./src/template-parameters.js');
 
 module.exports = {
-  entry: path.resolve(__dirname, 'src/js/index.js'),
+  mode: 'production',
+  entry: [
+    './src/js/index.js',
+    './src/css/style.css',
+  ],
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'js/bundle.js',
   },
+  stats: {
+    colors: true,
+    modules: false,
+    chunks: false,
+    chunkGroups: false,
+    chunkModules: false,
+    env: true,
+  },
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        uglifyOptions: {
+          compress: false,
+          ecma: 6,
+          mangle: true,
+        },
+      }),
+      new OptimizeCSSAssetsPlugin({}),
+    ],
+  },
   module: {
-    loaders: [
+    rules: [
       {
-        test: /\.js/,
-        loaders: ['babel-loader', 'eslint-loader'],
+        test: /\.js$/,
         exclude: /node_modules/,
+        use: ['babel-loader'],
       },
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: require.resolve('css-loader'),
-              options: {
-                minimize: true,
-                importLoaders: 1,
-                modules: false,
-              },
-            },
-            {
-              loader: require.resolve('postcss-loader'),
-              options: {
-                config: {
-                  path: 'postcss.config.js',
-                },
-              },
-            },
-          ],
-        }),
-      },
-      {
-        test: /\.(html)$/,
-        include: path.join(__dirname, 'src/views'),
-        use: {
-          loader: 'html-loader',
-          options: {
-            interpolate: true,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {},
           },
-        },
+          {
+            loader: 'css-loader',
+            options: {},
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              config: {
+                path: 'postcss.config.js',
+              },
+            },
+          },
+        ],
       },
       {
-        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.html$/,
+        include: path.resolve(__dirname, 'src/views'),
+        use: ['raw-loader'],
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
         use: [
           {
             loader: 'file-loader',
@@ -80,26 +96,11 @@ module.exports = {
       },
     ],
   },
-  resolve: {
-    modules: [
-      path.resolve(__dirname, 'src'),
-      path.resolve(__dirname, 'src/js'),
-      path.resolve(__dirname, 'node_modules'),
-    ],
-  },
   plugins: [
     new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false,
-        drop_console: false,
-        unsafe: true,
-      },
+    new MiniCssExtractPlugin({
+      filename: 'css/style.css',
     }),
-    new webpack.NoEmitOnErrorsPlugin(),
-    new webpack.NamedModulesPlugin(),
-    new ExtractTextPlugin('css/style.css'),
-    new HtmlWebpackHarddiskPlugin(),
     new CopyWebpackPlugin([
       {
         from: path.resolve(__dirname, 'src/fonts'),
@@ -114,7 +115,18 @@ module.exports = {
       inject: true,
       template: path.resolve(__dirname, 'src/index.html'),
       filename: path.resolve(__dirname, 'public/index.html'),
-      alwaysWriteToDisk: true,
+    }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      templateParameters,
+      template: path.resolve(__dirname, 'src/404.html'),
+      filename: path.resolve(__dirname, 'public/404.html'),
+    }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      templateParameters,
+      template: path.resolve(__dirname, 'src/500.html'),
+      filename: path.resolve(__dirname, 'public/500.html'),
     }),
   ],
 };

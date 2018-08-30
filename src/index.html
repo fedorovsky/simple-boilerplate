@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <html>
 
+<% var templateParameters = require('./template-parameters.js') %>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Home</title>
+  <title>simple boilerplate</title>
   <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+  <meta name="theme-color" content="#0b0b0c">
 </head>
 
 <body>
-  ${require('./views/partial.html')}
-  <div class="background"></div>
+  <%= _.template(require('./views/header.html'))(templateParameters) %>
+  <div class="body">
+    <div class="background"></div>
+    <img src="./img/photo.jpg" alt="">
+  </div>
+  <%= _.template(require('./views/footer.html'))(templateParameters) %>
 </body>
 
+<!-- Google Analytics: match UA-XXXXX-Y to be your site's ID. -->
+<script>
+  window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+  ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async defer></script>
 </html>

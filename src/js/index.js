@@ -1,4 +1,1 @@
-import 'css/style.css';
-
-
-console.log('hello');
+console.log('ENV', process.env.NODE_ENV);
