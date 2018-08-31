@@ -1,0 +1,4 @@
+@custom-media --xs-only only screen and (max-width: 767px);
+@custom-media --sm-only only screen and (min-width: 768px) and (max-width: 1024px);
+@custom-media --md-only only screen and (min-width: 1025px) and (max-width: 1440px);
+@custom-media --lg-only only screen and (min-width: 1441px);
