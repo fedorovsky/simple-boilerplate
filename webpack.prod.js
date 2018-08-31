@@ -3,8 +3,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const templateParameters = require('./src/template-parameters.js');
 
 module.exports = {
@@ -24,20 +22,6 @@ module.exports = {
     chunkGroups: false,
     chunkModules: false,
     env: true,
-  },
-  optimization: {
-    minimizer: [
-      new UglifyJsPlugin({
-        cache: true,
-        parallel: true,
-        uglifyOptions: {
-          compress: false,
-          ecma: 6,
-          mangle: true,
-        },
-      }),
-      new OptimizeCSSAssetsPlugin({}),
-    ],
   },
   module: {
     rules: [
@@ -111,6 +95,10 @@ module.exports = {
       {
         from: path.resolve(__dirname, 'src/img'),
         to: path.resolve(__dirname, 'public/img'),
+      },
+      {
+        from: path.resolve(__dirname, 'src/favicon.ico'),
+        to: path.resolve(__dirname, 'public/'),
       },
     ]),
     new HtmlWebpackPlugin({

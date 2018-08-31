@@ -113,6 +113,10 @@ module.exports = {
         from: path.resolve(__dirname, 'src/img'),
         to: path.resolve(__dirname, 'public/img'),
       },
+      {
+        from: path.resolve(__dirname, 'src/favicon.ico'),
+        to: path.resolve(__dirname, 'public/'),
+      },
     ]),
     new HtmlWebpackPlugin({
       inject: true,
