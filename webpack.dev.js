@@ -9,10 +9,7 @@ const templateParameters = require('./src/template-parameters.js');
 module.exports = {
   devtool: 'source-map',
   mode: 'development',
-  entry: [
-    './src/js/index.js',
-    './src/css/style.css',
-  ],
+  entry: ['./src/js/index.js', './src/css/style.css'],
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'js/bundle.js',
@@ -137,3 +134,5 @@ module.exports = {
     }),
   ],
 };
+
+// https://github.com/jantimon/html-webpack-plugin/issues/218
