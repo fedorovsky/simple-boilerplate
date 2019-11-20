@@ -1,11 +1,11 @@
 module.exports = {
-  'header': {
-    title: 'header parameter',
+  header: {
+    title: 'Header Title Parameter',
   },
-  'footer': {
-    title: 'footer parameter',
+  footer: {
+    title: 'Footer Title Parameter',
   },
-  '404': {
+  notFound: {
     title: 'Not Found',
   },
 };
