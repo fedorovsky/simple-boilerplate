@@ -1,32 +1,53 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>simple boilerplate</title>
+    <meta name="description" content="" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no"
+    />
+    <meta name="theme-color" content="#0b0b0c" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./img/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./img/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./img/favicon/favicon-16x16.png"
+    />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>simple boilerplate</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
-  <meta name="theme-color" content="#0b0b0c">
-  <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
-</head>
+  <% var templateParameters = require('./template-parameters.js') %>
+  <% var HEADER_TEMPLATE = require('./views/header.html').default %>
+  <% var FOOTER_TEMPLATE = require('./views/footer.html').default %>
 
-<% var templateParameters = require('./template-parameters.js') %>
-<body>
-  <%= _.template(require('./views/header.html'))(templateParameters) %>
-  <div class="body">
-    <div class="background"></div>
-    <img src="./img/photo.jpg" alt="">
-  </div>
-  <%= _.template(require('./views/footer.html'))(templateParameters) %>
-</body>
+  <body>
+    <%= _.template(HEADER_TEMPLATE)(templateParameters) %>
+    <div class="body">
+      <div class="background"></div>
+      <img src="./img/photo.jpg" alt="" />
+    </div>
+    <%= _.template(FOOTER_TEMPLATE)(templateParameters) %>
+  </body>
 
-<!-- Google Analytics: match UA-XXXXX-Y to be your site's ID. -->
-<script>
-  window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-  ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview')
-</script>
-<script src="https://www.google-analytics.com/analytics.js" async defer></script>
+  <!-- Google Analytics -->
+  <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  <!-- End Google Analytics -->
 </html>

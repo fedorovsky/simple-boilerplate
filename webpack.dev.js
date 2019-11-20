@@ -4,15 +4,11 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const templateParameters = require('./src/template-parameters.js');
 
 module.exports = {
   devtool: 'source-map',
   mode: 'development',
-  entry: [
-    './src/js/index.js',
-    './src/css/style.css',
-  ],
+  entry: ['./src/js/index.js', './src/css/style.css'],
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'js/bundle.js',
@@ -125,15 +121,15 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       inject: true,
-      templateParameters,
       template: path.resolve(__dirname, 'src/404.html'),
       filename: path.resolve(__dirname, 'public/404.html'),
     }),
     new HtmlWebpackPlugin({
       inject: true,
-      templateParameters,
       template: path.resolve(__dirname, 'src/500.html'),
       filename: path.resolve(__dirname, 'public/500.html'),
     }),
   ],
 };
+
+// https://github.com/jantimon/html-webpack-plugin/issues/218
