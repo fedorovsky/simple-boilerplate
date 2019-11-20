@@ -27,7 +27,7 @@ body {
 
 .background {
   height: 200px;
-  background-image: url('~/img/photo.jpg');
+  background-image: url('/img/photo.jpg');
 }
 
 img {
