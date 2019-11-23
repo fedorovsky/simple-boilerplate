@@ -7,10 +7,7 @@ const templateParameters = require('./src/template-parameters.js');
 
 module.exports = {
   mode: 'production',
-  entry: [
-    './src/js/index.js',
-    './src/css/style.css',
-  ],
+  entry: ['./src/js/index.js', './src/css/style.css'],
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'js/bundle.js',
