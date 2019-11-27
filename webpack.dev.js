@@ -84,7 +84,7 @@ module.exports = {
     inline: true,
     historyApiFallback: true,
     host: '0.0.0.0',
-    port: 9000,
+    port: 8000,
     disableHostCheck: true,
     stats: {
       colors: true,
@@ -100,7 +100,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'css/style.css',
     }),
-    new OpenBrowserPlugin({ url: 'http://localhost:9000' }),
+    new OpenBrowserPlugin({ url: 'http://localhost:8000' }),
     new CopyWebpackPlugin([
       {
         from: path.resolve(__dirname, 'src/fonts'),
