@@ -136,3 +136,4 @@ module.exports = {
 };
 
 // https://github.com/jantimon/html-webpack-plugin/issues/218
+// https://extri.co/2017/07/11/generating-multiple-html-pages-with-htmlwebpackplugin/
