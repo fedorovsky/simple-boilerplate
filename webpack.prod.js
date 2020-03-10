@@ -100,6 +100,7 @@ module.exports = {
     ]),
     new HtmlWebpackPlugin({
       inject: true,
+      title: 'Home Page',
       template: path.resolve(__dirname, 'src/index.html'),
       filename: path.resolve(__dirname, 'public/index.html'),
     }),

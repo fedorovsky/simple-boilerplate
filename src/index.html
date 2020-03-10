@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>simple boilerplate</title>
+    <title><%= htmlWebpackPlugin.options.title || 'Webpack App' %></title>
     <meta name="description" content="" />
     <meta
       name="viewport"
@@ -13,19 +13,19 @@
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="./img/favicon/apple-touch-icon.png"
+      href="/img/favicon/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./img/favicon/favicon-32x32.png"
+      href="/img/favicon/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="./img/favicon/favicon-16x16.png"
+      href="/img/favicon/favicon-16x16.png"
     />
   </head>
 
@@ -37,7 +37,7 @@
     <%= _.template(HEADER_TEMPLATE)(templateParameters) %>
     <div class="body">
       <div class="background"></div>
-      <img src="./img/photo.jpg" alt="" />
+      <img src="/img/photo.jpg" alt="" />
     </div>
     <%= _.template(FOOTER_TEMPLATE)(templateParameters) %>
   </body>
