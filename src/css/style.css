@@ -8,6 +8,7 @@ html {
 
 body {
   display: flex;
+
   @media (--xs-only) {
     border: 5px solid yellow;
   }

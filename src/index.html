@@ -30,8 +30,8 @@
   </head>
 
   <% var templateParameters = require('./template-parameters.js') %>
-  <% var HEADER_TEMPLATE = require('./views/header.html').default %>
-  <% var FOOTER_TEMPLATE = require('./views/footer.html').default %>
+  <% var HEADER_TEMPLATE = require('./partials/header.html').default %>
+  <% var FOOTER_TEMPLATE = require('./partials/footer.html').default %>
 
   <body>
     <%= _.template(HEADER_TEMPLATE)(templateParameters) %>

@@ -51,7 +51,7 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        include: path.resolve(__dirname, 'src/views'),
+        include: path.resolve(__dirname, 'src/partials'),
         use: ['raw-loader'],
       },
       {
