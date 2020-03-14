@@ -4,7 +4,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const templateParameters = require('./src/template-parameters.js');
 
 module.exports = {
   devtool: 'source-map',
@@ -50,9 +49,14 @@ module.exports = {
         ],
       },
       {
-        test: /\.html$/,
-        include: path.resolve(__dirname, 'src/partials'),
-        use: ['raw-loader'],
+        test: /\.(html)$/,
+        include: path.join(__dirname, 'src/'),
+        use: {
+          loader: 'html-loader',
+          options: {
+            interpolate: true,
+          },
+        },
       },
       {
         test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
@@ -117,19 +121,16 @@ module.exports = {
     ]),
     new HtmlWebpackPlugin({
       inject: true,
-      title: 'Home Page',
       template: path.resolve(__dirname, 'src/index.html'),
       filename: path.resolve(__dirname, 'public/index.html'),
     }),
     new HtmlWebpackPlugin({
       inject: true,
-      templateParameters,
       template: path.resolve(__dirname, 'src/404.html'),
       filename: path.resolve(__dirname, 'public/404.html'),
     }),
     new HtmlWebpackPlugin({
       inject: true,
-      templateParameters,
       template: path.resolve(__dirname, 'src/500.html'),
       filename: path.resolve(__dirname, 'public/500.html'),
     }),
