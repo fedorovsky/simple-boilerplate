@@ -29,17 +29,13 @@
     />
   </head>
 
-  <% var templateParameters = require('./template-parameters.js') %>
-  <% var HEADER_TEMPLATE = require('./partials/header.html').default %>
-  <% var FOOTER_TEMPLATE = require('./partials/footer.html').default %>
-
   <body>
-    <%= _.template(HEADER_TEMPLATE)(templateParameters) %>
+    ${require('./partials/header.html')}
     <div class="body">
       <div class="background"></div>
       <img src="/img/photo.jpg" alt="" />
     </div>
-    <%= _.template(FOOTER_TEMPLATE)(templateParameters) %>
+    ${require('./partials/footer.html')}
   </body>
 
   <!-- Google Analytics -->
