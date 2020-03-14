@@ -22,9 +22,7 @@ module.exports = merge(common, {
       env: true,
     },
   },
-  plugins: [
-    new OpenBrowserPlugin({ url: 'http://localhost:8000' }),
-  ],
+  plugins: [new OpenBrowserPlugin({ url: 'http://localhost:8000' })],
 });
 
 // https://github.com/jantimon/html-webpack-plugin/issues/218
