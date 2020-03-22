@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{"./src/js/asyncModule.js":function(n,s,u){"use strict";u.r(s),u.d(s,"sum",(function(){return c}));var c=function(n,s){return n+s};s.default={}}}]);
