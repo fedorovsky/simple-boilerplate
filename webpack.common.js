@@ -7,7 +7,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   entry: ['./src/js/index.js', './src/css/style.css'],
   output: {
-    path: path.resolve(__dirname, 'public'),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'js/bundle.js',
   },
   optimization: {
@@ -85,15 +85,15 @@ module.exports = {
     new CopyWebpackPlugin([
       {
         from: path.resolve(__dirname, 'src/fonts'),
-        to: path.resolve(__dirname, 'public/fonts'),
+        to: path.resolve(__dirname, 'dist/fonts'),
       },
       {
         from: path.resolve(__dirname, 'src/img'),
-        to: path.resolve(__dirname, 'public/img'),
+        to: path.resolve(__dirname, 'dist/img'),
       },
       {
         from: path.resolve(__dirname, 'src/favicon.ico'),
-        to: path.resolve(__dirname, 'public/'),
+        to: path.resolve(__dirname, 'dist/'),
       },
     ]),
     ...glob.sync('./src/*.html').map(htmlFile => {
