@@ -1,7 +1,5 @@
 .idea
 node_modules
-build
-public
 package-lock.json
 debug.log
 yarn.lock
