@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  display: flex;
+  display: block;
 
   @media (--xs-only) {
     border: 5px solid yellow;
@@ -28,11 +28,19 @@ body {
 
 .background {
   height: 200px;
-  background-image: url('/img/photo.jpg');
+  background-image: url('../img/photo.jpg');
 }
 
 img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+.header {
+  border: 5px solid green;
+}
+
+.footer {
+  border: 5px solid green;
 }

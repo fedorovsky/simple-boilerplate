@@ -26,7 +26,9 @@ module.exports = {
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
-            options: {},
+            options: {
+              publicPath: '../',
+            },
           },
           {
             loader: 'css-loader',
@@ -71,8 +73,9 @@ module.exports = {
         use: {
           loader: 'file-loader',
           options: {
+            esModule: false,
             name: '[name].[ext]',
-            outputPath: 'img/',
+            outputPath: 'img',
           },
         },
       },
