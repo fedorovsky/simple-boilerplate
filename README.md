@@ -2,6 +2,8 @@
 
 
 This is a simple starter kit for developing web pages using webpack. 
+You can try new JavaScript features with Babel. 
+
 - Webpack 4
 - Babel
 - PostCSS
