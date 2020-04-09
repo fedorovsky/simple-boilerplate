@@ -1,7 +1,7 @@
 # simple-boilerplate
 
-A simple set, for a quick start. Try the new features of JavaScript with Babel.
 
+This is a simple starter kit for developing web pages using webpack. 
 - Webpack 4
 - Babel
 - PostCSS
