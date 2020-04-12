@@ -51,9 +51,7 @@ module.exports = {
         include: path.join(__dirname, 'src/'),
         use: {
           loader: 'html-loader',
-          options: {
-            interpolate: true,
-          },
+          options: {},
         },
       },
       {

@@ -27,8 +27,8 @@ body {
 }
 
 .background {
-  height: 200px;
-  background-image: url('../img/photo.jpg');
+  height: 180px;
+  background-image: url('../img/body_background.png');
 }
 
 img {
