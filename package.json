@@ -9,12 +9,12 @@
     "eslint:--fix": "eslint --fix ./src/js/*",
     "fix": "yarn eslint:--fix && yarn stylelint:--fix",
     "start": "webpack-dev-server --config webpack.dev.js",
-    "stylelint:--fix": "stylelint ./**/*.css !./public/**/*.css --fix"
+    "stylelint:--fix": "stylelint ./**/*.css !./dist/**/*.css --fix"
   },
   "dependencies": {
     "jquery": "^3.5.0",
     "jquery-validation": "^1.19.1",
-    "normalize.css": "^8.0.1"
+    "swiper": "^5.3.8"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",

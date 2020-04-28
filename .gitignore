@@ -3,3 +3,5 @@ node_modules
 package-lock.json
 debug.log
 yarn.lock
+yarn-error.log
+bundle.js.LICENSE.txt
