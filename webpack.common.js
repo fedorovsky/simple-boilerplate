@@ -12,7 +12,6 @@ module.exports = {
   },
   optimization: {
     noEmitOnErrors: true,
-    namedModules: true,
   },
   module: {
     rules: [
@@ -97,10 +96,9 @@ module.exports = {
         to: path.resolve(__dirname, 'dist/'),
       },
     ]),
-    ...glob.sync('./src/*.html').map(htmlFile => {
+    ...glob.sync('./src/*.html').map((htmlFile) => {
       return new HtmlWebpackPlugin({
         inject: true,
-        interpolate: true,
         filename: path.basename(htmlFile),
         template: htmlFile,
       });

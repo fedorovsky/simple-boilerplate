@@ -1,4 +1,4 @@
-@import 'normalize.css'; /* from node_modules */
+@import 'normalize.css';
 @import 'media.css';
 @import 'fonts.css';
 
@@ -43,4 +43,9 @@ img {
 
 .footer {
   border: 5px solid green;
+}
+
+.swiper-container {
+  margin: 12px;
+  border: 5px solid violet;
 }

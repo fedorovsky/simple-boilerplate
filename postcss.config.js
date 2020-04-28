@@ -3,7 +3,7 @@ module.exports = () => ({
   plugins: {
     'postcss-import': {},
     'postcss-nested': {},
-    'cssnano': {},
+    cssnano: {},
     'postcss-preset-env': {
       stage: 3,
       browsers: ['last 5 versions', '> 5%'],
