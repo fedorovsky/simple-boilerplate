@@ -32,5 +32,5 @@ You can try new JavaScript features with Babel.
    
    Then you can enjoy the development.  
    
-   I would be very grateful if you put a star. Thank you so much.
+   If you put a star I will be very happy. Thank you so much.
   
