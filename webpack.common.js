@@ -82,20 +82,22 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'css/style.css',
     }),
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(__dirname, 'src/fonts'),
-        to: path.resolve(__dirname, 'dist/fonts'),
-      },
-      {
-        from: path.resolve(__dirname, 'src/img'),
-        to: path.resolve(__dirname, 'dist/img'),
-      },
-      {
-        from: path.resolve(__dirname, 'src/favicon.ico'),
-        to: path.resolve(__dirname, 'dist/'),
-      },
-    ]),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'src/fonts'),
+          to: path.resolve(__dirname, 'dist/fonts'),
+        },
+        {
+          from: path.resolve(__dirname, 'src/img'),
+          to: path.resolve(__dirname, 'dist/img'),
+        },
+        {
+          from: path.resolve(__dirname, 'src/favicon.ico'),
+          to: path.resolve(__dirname, 'dist/'),
+        },
+      ],
+    }),
     ...glob.sync('./src/*.html').map((htmlFile) => {
       return new HtmlWebpackPlugin({
         inject: true,
