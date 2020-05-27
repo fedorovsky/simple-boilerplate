@@ -1,4 +1,6 @@
-# Html webpack boilerplate
+# Html webpack boilerplate  
+![devDependencies](https://img.shields.io/david/dev/fedorovsky/simple-boilerplate)
+![dependencies](https://img.shields.io/david/fedorovsky/simple-boilerplate)
 
 ## Features
 - Webpack 
@@ -6,6 +8,7 @@
 - PostCSS
 - ESlint
 - Prettier
+- devServer
 
 ## Quick start
 
@@ -13,7 +16,7 @@
 2. Clone this repo `git clone git@github.com:fedorovsky/simple-boilerplate.git` or [download zip](https://github.com/fedorovsky/simple-boilerplate/archive/master.zip)
 3. Install Dependencies `npm install`
 4. Run project `npm start`
-5. The project will be launched and the browser will open. Now you can enjoy the development.  
+5. The project will be launched. The browser will be launched. Then enjoy the development.  
 
 If you need to upload files to the server, just run the command `npm run build` or `yarn build` and all the files will
  be in
