@@ -1,5 +1,5 @@
 {
-  "extends": ["airbnb", "prettier"],
+  "extends": ["airbnb/base", "prettier"],
   "plugins": ["prettier"],
   "parser": "babel-eslint",
   "globals": {
@@ -12,8 +12,6 @@
     "no-console": 0,
     "import/no-unresolved": 0,
     "import/extensions": 0,
-    "react/react-in-jsx-scope": 0,
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "prefer-destructuring": ["error", { "object": true, "array": false }],
     "quote-props": 0,
     "linebreak-style": 0
@@ -22,7 +20,6 @@
     "ecmaVersion": 6,
     "sourceType": "module",
     "ecmaFeatures": {
-      "jsx": true,
       "modules": true,
       "experimentalObjectRestSpread": true
     }
