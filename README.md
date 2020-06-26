@@ -1,17 +1,20 @@
-# Html webpack boilerplate  
+# 🚀 Html webpack boilerplate  
 ![devDependencies](https://img.shields.io/david/dev/fedorovsky/simple-boilerplate)
 ![dependencies](https://img.shields.io/david/fedorovsky/simple-boilerplate)
 [![Build Status](https://travis-ci.com/fedorovsky/simple-boilerplate.svg?branch=master)](https://travis-ci.com/fedorovsky/simple-boilerplate)
 
-## Features
+## ✨ [Demo Page](https://fedorovsky.github.io/simple-boilerplate/dist/)
+
+## ⚙️ Features
 - Webpack 
 - Babel
 - PostCSS
 - ESlint
+- Stylelint
 - Prettier
 - devServer
 
-## Quick start
+## 🏁 Quick start
 
 1. Make sure you have Node.js.
 2. Clone this repo `git clone git@github.com:fedorovsky/simple-boilerplate.git` or [download zip](https://github.com/fedorovsky/simple-boilerplate/archive/master.zip)
@@ -31,4 +34,5 @@ If you need to upload files to the server, just run the command `npm run build` 
 | `npm run build` | `yarn build`     | production            |
 | `npm run fix`   | `yarn fix`       | fix file with linters |
 
-Thanks for the star ☺️ 
+## 👏 Show your support  
+Please ⭐️ this repository if this project helped you!
