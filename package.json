@@ -1,16 +1,25 @@
 {
-  "name": "boilerplate",
+  "name": "create-simple-boilerplate",
   "version": "0.0.1",
   "description": "simple boilerplate",
   "license": "MIT",
   "author": "Anton Fedorovskyi <anton.fedorovsky@gmail.com>",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
+    "eslint": "eslint",
     "eslint:--fix": "eslint --fix ./src/js/*",
     "fix": "npm run eslint:--fix && npm run stylelint:--fix",
     "start": "webpack-dev-server --config webpack.dev.js",
+    "stylelint": "stylelint ./**/*.css !./dist/**/*.css",
     "stylelint:--fix": "stylelint ./**/*.css !./dist/**/*.css --fix"
   },
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "Firefox ESR",
+    "not dead",
+    "IE 11"
+  ],
   "dependencies": {
     "jquery": "^3.5.1",
     "swiper": "^5.4.3"
@@ -53,5 +62,9 @@
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^4.2.2"
+  },
+  "engines": {
+    "node": ">=10",
+    "npm": ">=3"
   }
 }
