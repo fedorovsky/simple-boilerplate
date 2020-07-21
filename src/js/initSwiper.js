@@ -1,7 +1,10 @@
-import Swiper from 'swiper';
-import 'swiper/css/swiper.css';
+import Swiper, { Navigation, Pagination } from 'swiper';
+import 'swiper/swiper-bundle.css';
 
-export default new Swiper('.swiper-container', {
+// configure Swiper to use modules
+Swiper.use([Navigation, Pagination]);
+
+const mySwiper = new Swiper('.swiper-container', {
   loop: true,
   pagination: {
     el: '.swiper-pagination',
@@ -11,3 +14,5 @@ export default new Swiper('.swiper-container', {
     prevEl: '.swiper-button-prev',
   },
 });
+
+export default mySwiper;
