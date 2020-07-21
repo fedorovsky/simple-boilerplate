@@ -4,6 +4,14 @@
   "description": "simple boilerplate",
   "license": "MIT",
   "author": "Anton Fedorovskyi <anton.fedorovsky@gmail.com>",
+  "homepage": "https://github.com/fedorovsky/simple-boilerplate",
+  "bugs": {
+    "url": "https://github.com/fedorovsky/simple-boilerplate/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:fedorovsky/simple-boilerplate.git"
+  },
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "eslint": "eslint",
