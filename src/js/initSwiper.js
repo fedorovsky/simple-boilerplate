@@ -1,13 +1,24 @@
-import Swiper from 'swiper';
-import 'swiper/css/swiper.css';
+import Swiper, { Navigation, Pagination } from 'swiper';
 
-export default new Swiper('.swiper-container', {
+require('swiper/swiper-bundle.min.css');
+
+Swiper.use([Navigation, Pagination]);
+
+const mySwiper = new Swiper('.swiper-container', {
   loop: true,
+
   pagination: {
     el: '.swiper-pagination',
   },
+
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
+
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
 });
+
+export default mySwiper;
