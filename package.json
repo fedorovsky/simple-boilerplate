@@ -1,6 +1,6 @@
 {
   "name": "simple-layout-boilerplate",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "simple boilerplate",
   "license": "MIT",
   "author": "Anton Fedorovskyi <anton.fedorovsky@gmail.com>",
@@ -19,7 +19,8 @@
     "fix": "npm run eslint:--fix && npm run stylelint:--fix",
     "start": "webpack-dev-server --config webpack.dev.js",
     "stylelint": "stylelint ./**/*.css !./dist/**/*.css",
-    "stylelint:--fix": "stylelint ./**/*.css !./dist/**/*.css --fix"
+    "stylelint:--fix": "stylelint ./**/*.css !./dist/**/*.css --fix",
+    "release": "generate-release"
   },
   "browserslist": [
     "> 0.5%",
@@ -49,6 +50,7 @@
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-prettier": "^3.1.4",
     "file-loader": "^6.0.0",
+    "generate-release": "^1.1.1",
     "glob": "^7.1.6",
     "html-loader": "^1.1.0",
     "html-webpack-plugin": "4",
