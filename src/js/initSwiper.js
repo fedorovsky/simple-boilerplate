@@ -1,6 +1,5 @@
 import Swiper, { Navigation, Pagination } from 'swiper';
-
-require('swiper/swiper-bundle.min.css');
+import 'swiper/swiper-bundle.min.css';
 
 Swiper.use([Navigation, Pagination]);
 
