@@ -16,16 +16,26 @@
 
 ## 🏁 Quick start
 
-1. Make sure you have Node.js.
-2. Clone this repo `git clone git@github.com:fedorovsky/simple-boilerplate.git` or [download zip](https://github.com/fedorovsky/simple-boilerplate/archive/master.zip)
-3. Install Dependencies `npm install`
-4. Run project `npm start`
-5. The project will be launched. The browser will be opened. Then enjoy the development.  
+``` bash
+# Download repository:
+git clone https://github.com/fedorovsky/simple-boilerplate simple-boilerplate
 
-If you need to upload files to the server, just run the command `npm run build` or `yarn build` and all the files will
- be in
- the
- folder `./dist`
+# Go to the app:
+cd simple-boilerplate
+
+# Install dependencies:
+npm install
+
+# Server with live reload at http://localhost:8000/
+npm run start
+```
+
+## 🏁 Production build
+
+``` bash
+# Output will be at dist/ folder
+npm run build
+```
 
 | npm             | yarn             | actions               |
 |-----------------| ---------------- | --------------------- |
