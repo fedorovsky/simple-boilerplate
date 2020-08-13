@@ -13,6 +13,10 @@ module.exports = merge(common, {
     host: '0.0.0.0',
     port: 8000,
     disableHostCheck: true,
+    overlay: {
+      warnings: true,
+      errors: true
+    },
     stats: {
       colors: true,
       modules: false,
