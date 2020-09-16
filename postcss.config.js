@@ -2,7 +2,7 @@ module.exports = () => ({
   ident: 'postcss',
   plugins: {
     'postcss-import': {},
-    'postcss-nested': {},
+    'postcss-nesting': {},
     cssnano: {},
     'postcss-preset-env': {
       stage: 3,
