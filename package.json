@@ -23,11 +23,8 @@
     "release": "generate-release"
   },
   "browserslist": [
-    "> 0.5%",
-    "last 2 versions",
-    "Firefox ESR",
-    "not dead",
-    "IE 11"
+    "> 5%",
+    "last 5 versions"
   ],
   "dependencies": {
     "jquery": "^3.5.1",
