@@ -68,7 +68,7 @@ module.exports = {
           options: {
             esModule: false,
             name: '[path][name].[ext]',
-            outputPath: 'img',
+            context: 'src',
           },
         },
       },
