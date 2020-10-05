@@ -15,7 +15,7 @@ module.exports = merge(common, {
     disableHostCheck: true,
     overlay: {
       warnings: true,
-      errors: true
+      errors: true,
     },
     stats: {
       colors: true,
