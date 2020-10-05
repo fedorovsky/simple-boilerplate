@@ -81,16 +81,8 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, 'src/fonts'),
-          to: path.resolve(__dirname, 'dist/fonts'),
-        },
-        {
-          from: path.resolve(__dirname, 'src/img'),
-          to: path.resolve(__dirname, 'dist/img'),
-        },
-        {
-          from: path.resolve(__dirname, 'src/favicon.ico'),
-          to: path.resolve(__dirname, 'dist/'),
+          from: path.resolve(__dirname, 'src/img/favicon'),
+          to: path.resolve(__dirname, 'dist/img/favicon'),
         },
       ],
     }),
