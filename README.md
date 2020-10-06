@@ -29,6 +29,15 @@ npm install
 npm run start
 ```
 
+## 🏁 Quick start npx 
+You can copy this command and paste into terminal. The project will be downloaded and launched. Enjoy.
+``` bash
+npx create-simple-boilerplate new-site
+cd new-site
+npm install
+npm start
+```
+
 ## 🏁 Production build
 
 ``` bash
