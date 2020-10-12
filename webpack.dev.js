@@ -1,4 +1,3 @@
-const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 
@@ -13,6 +12,8 @@ module.exports = merge(common, {
     host: '0.0.0.0',
     port: 8000,
     disableHostCheck: true,
+    open: true,
+    openPage: 'http://localhost:8000',
     overlay: {
       warnings: true,
       errors: true,
@@ -26,7 +27,6 @@ module.exports = merge(common, {
       env: true,
     },
   },
-  plugins: [new OpenBrowserPlugin({ url: 'http://localhost:8000' })],
 });
 
 // https://github.com/jantimon/html-webpack-plugin/issues/218
