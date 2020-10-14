@@ -5,20 +5,20 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: ['./src/js/index.js', './src/css/style.css'],
+  target: 'web',
+  context: path.resolve(__dirname, 'src'),
+  entry: ['./js/index.js', './css/style.css'],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'js/bundle.js',
-  },
-  optimization: {
-    noEmitOnErrors: true,
+    filename: 'js/[name].js',
+    publicPath: '',
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: ['babel-loader'],
+        use: 'babel-loader',
       },
       {
         test: /\.css$/,
@@ -37,39 +37,25 @@ module.exports = {
           },
           {
             loader: 'postcss-loader',
-            options: {},
           },
         ],
       },
       {
         test: /\.(html)$/,
-        include: path.join(__dirname, 'src/'),
-        use: {
-          loader: 'html-loader',
-          options: {},
-        },
+        use: 'html-loader',
       },
       {
         test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'fonts/',
-            },
-          },
-        ],
+        type: 'asset',
+        generator: {
+          filename: '[path][name]-[hash][ext]',
+        },
       },
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
-        use: {
-          loader: 'file-loader',
-          options: {
-            esModule: false,
-            name: '[path][name].[ext]',
-            context: 'src',
-          },
+        type: 'asset',
+        generator: {
+          filename: '[path][name]-[hash][ext]',
         },
       },
     ],
@@ -90,7 +76,7 @@ module.exports = {
       return new HtmlWebpackPlugin({
         inject: true,
         filename: path.basename(htmlFile),
-        template: htmlFile,
+        template: path.basename(htmlFile),
       });
     }),
   ],
