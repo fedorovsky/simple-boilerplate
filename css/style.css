@@ -633,6 +633,10 @@ template {
   unicode-range: U+00A1-017F, U+0307;
 }
 
+.swiper-container {
+  border: 5px solid violet;
+}
+
 html {
   font-family: 'MuseoSans', sans-serif;
 }
@@ -686,10 +690,5 @@ img {
 
 .footer {
   border: 5px solid green;
-}
-
-.swiper-container {
-  margin: 12px;
-  border: 5px solid violet;
 }
 
