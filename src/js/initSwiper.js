@@ -5,6 +5,15 @@ Swiper.use([Navigation, Pagination]);
 
 const mySwiper = new Swiper('.swiper-container', {
   loop: true,
+  slidesPerView: 1,
+  spaceBetween: 10,
+
+  breakpoints: {
+    415: {
+      slidesPerView: 3,
+      spaceBetween: 10,
+    },
+  },
 
   pagination: {
     el: '.swiper-pagination',
