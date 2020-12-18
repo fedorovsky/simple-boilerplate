@@ -13,6 +13,12 @@ module.exports = {
     filename: 'js/[name].js',
     publicPath: '',
   },
+  optimization: {
+    // chunkIds: 'named',
+    splitChunks: {
+      chunks: 'all',
+    },
+  },
   module: {
     rules: [
       {
@@ -64,7 +70,8 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'css/style.css',
+      filename: 'css/[name].css',
+      chunkFilename: 'css/[id].css',
     }),
     new CopyWebpackPlugin({
       patterns: [
