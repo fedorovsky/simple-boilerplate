@@ -14,7 +14,7 @@
   "author": "Anton Fedorovskyi <anton.fedorovsky@gmail.com>",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
-    "eslint": "eslint",
+    "eslint": "eslint ./src/js/*",
     "eslint:--fix": "eslint --fix ./src/js/*",
     "fix": "npm run eslint:--fix && npm run stylelint:--fix",
     "start": "webpack serve --config webpack.dev.js",
