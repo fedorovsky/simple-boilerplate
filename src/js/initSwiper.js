@@ -1,5 +1,5 @@
 import Swiper, { Navigation, Pagination } from 'swiper';
-import 'swiper/swiper-bundle.min.css';
+import 'swiper/css/bundle';
 
 Swiper.use([Navigation, Pagination]);
 

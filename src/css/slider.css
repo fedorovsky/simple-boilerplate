@@ -1,3 +1,4 @@
 .swiper-container {
+  position: relative;
   border: 5px solid violet;
 }
