@@ -47,7 +47,7 @@
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-prettier": "^4.0.0",
     "file-loader": "^6.2.0",
-    "glob": "^7.1.7",
+    "glob": "^8.1.0",
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "5",
     "imagemin-webpack-plugin": "^2.4.2",
