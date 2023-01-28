@@ -1,10 +1,10 @@
-@import 'normalize.css';
-@import 'media.css';
-@import 'fonts.css';
-@import 'slider.css';
+@import url("normalize.css");
+@import url("media.css");
+@import url("fonts.css");
+@import url("slider.css");
 
 html {
-  font-family: 'MuseoSans', sans-serif;
+  font-family: MuseoSans, sans-serif;
 }
 
 body {
@@ -29,7 +29,7 @@ body {
 
 .background {
   height: 180px;
-  background-image: url('../img/body_background.png');
+  background-image: url("../img/body_background.png");
 }
 
 img {
