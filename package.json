@@ -27,7 +27,7 @@
   ],
   "dependencies": {
     "jquery": "^3.6.3",
-    "swiper": "^7.0.3"
+    "swiper": "^8.4.6"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
