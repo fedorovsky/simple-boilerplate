@@ -50,7 +50,6 @@
     "glob": "^8.1.0",
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "5",
-    "imagemin-webpack-plugin": "^2.4.2",
     "mini-css-extract-plugin": "^2.7.2",
     "postcss": "^8.4.21",
     "postcss-import": "^15.1.0",
