@@ -14,7 +14,17 @@
     "import/extensions": 0,
     "prefer-destructuring": ["error", { "object": true, "array": false }],
     "quote-props": 0,
-    "linebreak-style": 0
+    "linebreak-style": 0,
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "webpack.common.js",
+          "webpack.dev.js",
+          "webpack.prod.js"
+        ]
+      }
+    ]
   },
   "parserOptions": {
     "ecmaVersion": 6,
