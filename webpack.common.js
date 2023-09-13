@@ -81,6 +81,10 @@ module.exports = {
           from: path.resolve(__dirname, 'src/img/favicon'),
           to: path.resolve(__dirname, 'dist/img/favicon'),
         },
+        {
+          from: path.resolve(__dirname, 'src/service-worker.js'),
+          to: path.resolve(__dirname, 'dist/service-worker.js'),
+        },
       ],
     }),
     ...glob.sync('./src/*.html').map((htmlFile) => {
