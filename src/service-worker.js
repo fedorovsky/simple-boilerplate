@@ -40,7 +40,6 @@ if (workbox) {
     }),
   );
 
-
   workbox.routing.registerRoute(
     /\.(?:png|jpg|jpeg|svg|gif)$/,
     new workbox.strategies.CacheFirst({
