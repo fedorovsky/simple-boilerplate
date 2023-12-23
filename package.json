@@ -27,7 +27,7 @@
   ],
   "dependencies": {
     "jquery": "^3.6.3",
-    "swiper": "^8.4.6"
+    "swiper": "^11.0.5"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
@@ -55,7 +55,6 @@
     "postcss": "^8.4.21",
     "postcss-import": "^15.1.0",
     "postcss-loader": "^7.0.2",
-    "postcss-nesting": "^11.0.1",
     "postcss-preset-env": "^8.0.1",
     "prettier": "^2.8.3",
     "style-loader": "^3.3.1",
